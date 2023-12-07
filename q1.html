@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<!--On the final there will be 5 questions, each worth 4 marks.
 
+q1.htnl includes a document about piday. The first included custom element, logs the days left until piday. Edit this custom element to put the value in the innerHtml. 
+You can use the 2d included custom element as a hint. If piday has already happened this year nDaysLeft will be negative. 
+Recalculate nPiday and nDaysLeft to be the days till the next piday if nDaysLeft is negative.
+Hint: Start with PiDay and get the year right. Make the same change in DaysLeft-->
 <head>
 </head>
 
@@ -13,8 +18,11 @@
             let nPiDay=new Date(today.getFullYear(), 2, 14);
             let nSeconds = 1000*60*60*24;
             let nDaysLeft = Math.ceil((nPiDay.getTime()-today.getTime())/(nSeconds));
-            console.log(nDaysLeft); //logs the value we are looking for in our heading
-            // put your "secret sauce here to get this in to the document
+            
+            console.log(nDaysLeft);  //logs the value we are looking for in our heading
+            // put your "secrzet sauce here to get this in to the document
+            this.innerHTML= (nDaysLeft);
+            
         }
     }
 
@@ -24,7 +32,8 @@
         connectedCallback(){
             let today=new Date();
             let nPiDay=new Date(today.getFullYear(), 2, 14);
-            this.innerHTML = nPiDay.toLocaleDateString('en-CA');
+            let huza= =PiDay.toLocaleDateString('en-CA');
+            this.innerHTML 
         }
     }
 

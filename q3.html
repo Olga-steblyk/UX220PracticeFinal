@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--
+q3.html includes a twitter bootstrap contact form. Edit the form to:
 
+a. Add a single line (input) of text subject.
+
+b. Make it so that the form can't be submitted until there is something in the subject and email.
+
+c. in an html comment directly before the form tag describe why or why not this form will work on the internet.
+
+d. Make it so that the form is centred in the page.
+
+e. Make the submit button on the right hand side and make sure that it doesn't overlap the footer.
+
+f. Make the footer in a cursive font of your choosing from google fonts and with light text and a dark background of sufficient contrast.
+
+-->
 <head>
-    <link rel="stylesheet" crossorigin="anonymous" https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+    .form-hug{
+    float: centred;
+    padding: 40px;
+    margin: 30px;
+    }
+    main,header{
+    padding:10px;}
+    .btn-primary{
+    float:right;
+    }
+    footer{
+    font-family: 'Dancing Script', cursive;
+    }
+    </style>
 </head>
 
 
 <body>
     <header>
-        <h1>Contact us</h1>
+        <p>No it will not work, local is not Global, the form is only tied to the computer that it is on.</p>
+        
+
     </header>
     <main>
-        <!-- TODO describe why this form will or will not work on the internet -->
-        <form action="localhost:8000" method="post">
+        <h1>Contact us</h1>
+        <div class="form-hug">
+        <form action="localhost:8000" method="post" >
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" id="name" type="text" name="Name">
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email</label required>
                 <input class="form-control" id="email" type="email" name="Email">
+            </div>
+            <div class="form-group">
+                <label for="name">Subject</label required>
+                <input class="form-control" id="name" type="text" name="Subject">
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
@@ -29,9 +69,10 @@
             <input class="btn btn-primary" type="submit" value="Submit" />
             </div>
         </form>
+        </div>
     </main>
     <footer>
-        <p>Your name here</p>
+        <p>&copy Olga Steblyk</p>
     </footer>
 </body>
 
