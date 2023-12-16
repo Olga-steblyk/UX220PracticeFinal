@@ -12,32 +12,31 @@ Hint: Start with PiDay and get the year right. Make the same change in DaysLeft-
     <h1>There are <x-daysleft></x-daysleft> day(s) left until PI Day (<x-piday></x-piday>).</h1>
 </body>
 <script>
+    // custom element for the number of days until pi day
     class DaysLeft extends HTMLElement{
         connectedCallback(){
             let today=new Date();
-            let nPiDay=new Date(today.getFullYear(), 2, 14);
+            let nPiDay=new Date(today.getFullYear()+1, 2, 14);
             let nSeconds = 1000*60*60*24;
             let nDaysLeft = Math.ceil((nPiDay.getTime()-today.getTime())/(nSeconds));
-            
-            console.log(nDaysLeft);  //logs the value we are looking for in our heading
-            // put your "secrzet sauce here to get this in to the document
-            this.innerHTML= (nDaysLeft);
-            
+            console.log(nDaysLeft); //logs the value we are looking for in our heading
+            // put your "secret sauce here to get this in to the document
+            this.innerHTML = nDaysLeft;
+
         }
     }
-
     customElements.define("x-daysleft", DaysLeft);
 
+    // custom element to retrieve the date of pi day
     class PiDay extends HTMLElement{
         connectedCallback(){
             let today=new Date();
-            let nPiDay=new Date(today.getFullYear(), 2, 14);
-            let huza= =PiDay.toLocaleDateString('en-CA');
-            this.innerHTML 
+            let nPiDay=new Date(today.getFullYear()+1, 2, 14);
+            this.innerHTML = nPiDay.toLocaleDateString('en-CA');
         }
     }
-
     customElements.define("x-piday", PiDay);
+
 </script>
 
 </html>
